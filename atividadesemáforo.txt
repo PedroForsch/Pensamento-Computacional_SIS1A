@@ -1,1 +1,23 @@
-a
+1- O problema consiste na falta de segurança, onde não existe sistema de semáforo, mas possui faixa de pedestre, ou seja, nada garante que um carro vai dar preferência ao pedestre.
+
+
+2- Dito isso, a solução para o problema consiste na instalação de um sistema semafórico inteligente, onde haverá: 
+
+Para os veículos, sinal vermelho(pare), sinal amarelo(reduzir velocidade), sinal verde.
+
+Para os pedestres, sinal vermelho(pare), sinal verde.
+
+Levando em consideração que a velocidade máxima permitida em via escolar no Brasil, é aproximadamente de 30km/h, portanto, para a frenagem segura, o sinal amarelo deve ser de 3 segundos ou mais.
+
+Os sinais precisam alternar automaticamente, de forma que, o sinal verde do pedestre só vai acender quando o sinal vermelho, dos veículos, estiver acesso.
+Quando o sinal verde dos veículos estiver ligado, o sinal vermelho dos pedestres deve estar desligado.
+Para fins de segurança, devemos fazer com que o sinal amarelo dure 3 segundos ou mais, a fim de frenagem segura.
+
+3- Led verde dos carros ligado por 20 segundos, enquanto sinal amarelo e verde dos carros desligados. O sinal vermelho dos pedestres deve estar ativo enquanto isso, e o verde desligado.
+Led amarelo dos carros ligado por 3 segundos, enquanto vermelho e verde desligados. Enquanto isso, sinal vermelho dos pedestres ligado e verde desligado.
+Led vermelho dos carros ligado por 20 segundos, enquanto sinal amarelo e verdes desligados. O sinal verde dos pedestres ligados pelo mesmo tempo, e sinal vermelho desligado.
+
+4- Implementando a solução em Arduino no Tinkercad :
+
+5- Avaliando nosso código em Arduino, chega-se à conclusão que, se implementada dessa forma, o problema potencialmente se resolveria, necessitando de avaliação prévia e manutenção adequada. Levando em consideração a segurança, fez-se necessário um atraso entre sinais, para evitar qualquer tipo de acidente.
+
