@@ -11,4 +11,5 @@ Sendo elas: abrir esquerda, abrir direito, abrir todas, fechar todas.
 Passo a Passo:
 
 1 - Definir os pinos digitais e variáveis.
-|componente | pino |
+| componente | pino |
+| botão2     | 2    |
