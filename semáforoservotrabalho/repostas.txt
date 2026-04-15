@@ -1,0 +1,14 @@
+OBS: adicionei no arquivo "codigo.ino" o código em C++, devido a grande extensão do código no tinkercad, a visualização fica mais fácil.
+
+Respostas:
+
+O sistema precisa operar dois servo motores individualmente, com um sistema de luzes individual (Verde e Vermelho).
+O sistema também precisa conter um Led Amarelo para quando os portôes se moverem e um Led Azul, para quando os dois estiverem abertos.
+Verde representa portão aberto e Vermelho portão fechado.
+Utilizaremos 4 botões, cada um com uma função específica.
+Sendo elas: abrir esquerda, abrir direito, abrir todas, fechar todas.
+
+Passo a Passo:
+
+1 - Definir os pinos digitais e variáveis.
+|componente | pino |
