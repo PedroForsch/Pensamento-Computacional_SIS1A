@@ -3,13 +3,73 @@ OBS: adicionei no arquivo "codigo.ino" o código em C++, devido a grande extens�
 Respostas:
 
 O sistema precisa operar dois servo motores individualmente, com um sistema de luzes individual (Verde e Vermelho).
-O sistema também precisa conter um Led Amarelo para quando os portôes se moverem e um Led Azul, para quando os dois estiverem abertos.
+O sistema também precisa conter um Led Amarelo para quando os portôes estiverem se movendo e um Led Azul, para quando os dois estiverem abertos.
 Verde representa portão aberto e Vermelho portão fechado.
 Utilizaremos 4 botões, cada um com uma função específica.
 Sendo elas: abrir esquerda, abrir direito, abrir todas, fechar todas.
 
 Passo a Passo:
 
-1 - Definir os pinos digitais e variáveis.
-| componente | pino |
-| botão2     | 2    |
+1 - Definir os pinos digitais.
+Irei nomeá-los para organização e atribuilos ao respesctivos pinos digitais.
+
+Botão 2 | pino 2 | Abre portão esquerdo
+Botão 3 | pino 3 | Abre os dois portões
+Botão 4 | pino 4 | Fecha os dois portões
+Botão 5 | pino 5 | Abre portão direito
+
+Servo Motor Esquerdo | pino 7
+Servo Motor Direito  | pino 6
+
+Led Verde Esquerdo    | pino 13
+Led Vermelho Esquerdo | pino 12
+Led Azul              | pino 11
+Led Amarelo           | pino 10
+Led Vermelho Direito  | pino 9
+Led Verde Direito     | pino 8
+
+2 - Com base nisso, definimos cada variável a cada pino.
+
+Botão2 = ler pino digital 2
+Botão3 = ler pino digital 3
+Botão4 = ler pino digital 4
+Botão5 = ler pino digital 5
+
+Servoesquerdo = ler pino digital 7 
+Servodireito = ler pino digital 6
+
+3- No ínicio do código, giramos os dois servos motores em 90 graus e acendemos os dois led vermelhos(pinos 9 e 12), pois o portão está fechado, essa é nossa posição inicial.
+
+4- Podemos começar a estabelecer condições, após montar o circuito corretamente.
+
+Se botão2 = ALTO (ligado) ABRIR LADO ESQUERDO
+definimos pino 10(amarelo) ligado e pino 12(vermelho esquerdo) desligado
+girar pino 7 para 0 graus
+esperar 1 segundo para o portão abrir
+desligar pino 10 (amarelo) e ligar pino 13 (verde esquerdo)
+
+
+Se botão5 = ALTO (ligado) ABRIR LADO DIREITO
+definimos pino 10(amarelo) ligado e pino 9 (vermelho direito) desligado
+girar pino 6 para 0 graus
+esperar 1 segundo para o portão abrir
+desligar pino 10 (amarelo) e ligar pino 8 (verde direito)
+
+Se botão4 = ALTO (ligado) FECHAR OS DOIS PORTÕES
+definimos pino 10 ligado e desligamos os pinos 11 , 13 e 8 (led azul, led verde direito e equerdo)
+girar pino 6 e 7 para 90 graus
+esperar 1 segundo para fechar os portões
+desligar pino 10 e ligar pinos 9 e 12 (vermelho direito e equerdo)
+
+Se botão5 = ALTO (ligado) ABRIR OS DOIS PORTÕES
+definimos pino 10 como ligado e os pinos 12 e 9 (vermelho esquerdo e direito) como desligado
+giramos pino 7 e 6 para 90 graus
+desligar pino 10 e ligar pinos 13 e 8 (verde esquerdo e direito)
+
+Estabelecemos outra condição para o led azul (pino 11)
+ler grau do pino 7 e se for menor que 90
+lemos o grau do pino 6 e se for menor que 90
+definir pino 11 como ligado
+
+
+
