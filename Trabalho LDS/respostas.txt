@@ -1,0 +1,42 @@
+Questão 01
+Entrada:
+Fotoressistor
+Botão Modo Automático (Responder ao LDR)
+Botão Modo Alerta (Led vermelho ligado independente da leitura LDR)
+Botão Desligamento (Desligar todos os leds)
+
+Saída:
+Led RGB (Verde, Amarelo e Vermelho)
+
+
+Questão 02
+Placa Arduino (cérebro do sistema)
+Led RGB (indentificação do estado atual por meio de cores)
+Placa de Ensaio (permite testes de um protótipo rápido, sem utilizar solda)
+Resistor (controlam o fluxo de corrente elétrica)
+Fotoresistor (LDR que simula a iluminação de um ambiente real, funciona como a entrada de uma informação)
+
+
+Questão 03
+O sistema deve responder ao LDR, funcionando como uma entrada.
+Led vermelho (escuro) , Led Amarelo (média) , Led Verde (claro)
+O botão 1 deve ativar o modo automático, onde o Led RGB responde diretamente ao fotoresistor.
+O botão 2 deve ativar o modo alerta, onde o sistema mantêm vermelho ligado no RGB, independente da leitura do LDR.
+O botão 3 deve desligar o sistema, apagando todos os leds.
+O sistema deve responder a opção do usuário de pressionar botões simultâneos como algo consistente.
+
+
+Questão 4
+As estruturas IFS servem para controlar a função dos botões, garantindo que cada botão execute seu devido modo sem bugs.
+
+Existem ifs no sistema para controlar o LED:
+
+Quando o LDR estiver claro (condição), o led verde deve estar ligado.
+Quando o LDR estiver médio (condição), o led amarelo deve estar ligado.
+Quando o LDR estiver escuro (condição), o led vermelho deve estar ligado.
+
+Quando o Botão 1 estiver ALTO, o sistema deve responder a leitura do LDR acima.
+
+Quando o Botão 2 estiver ALTO, o sistema deve ligar o RGB vermelho, independente da leitura.
+
+Quando o Botão 3 estiver ALTO, o sistema deve desligar o RGB.
